@@ -68,6 +68,16 @@ GC_smoothing_step = 20
 in_file = out_dir +'/GC_counts/'+ bam_file_name+'.GC_counts.txt'
 print('in_file:',in_file)
 
+# In[6]:
+
+
+#create output folders if needed
+if not os.path.exists(out_dir +'/GC_plots/'):
+    os.mkdir(out_dir +'/GC_plots/')
+if not os.path.exists(out_dir +'/GC_bias/'):
+    os.mkdir(out_dir +'/GC_bias/')
+
+
 #output is smoothed version
 smoothed_out_file = out_dir +'/GC_bias/'+ bam_file_name+'.GC_bias.txt'
 
@@ -78,16 +88,6 @@ plot_file3 = out_dir +'/GC_plots/'+ bam_file_name+'.GC_bias.key_lengths.pdf'
 
 print('out_file:',smoothed_out_file)
 sys.stdout.flush()
-
-
-# In[6]:
-
-
-#create output folders if needed
-if not os.path.exists(out_dir +'/GC_plots/'):
-    os.mkdir(out_dir +'/GC_plots/')
-if not os.path.exists(out_dir +'/GC_bias/'):
-    os.mkdir(out_dir +'/GC_bias/')
 
 
 # In[7]:
